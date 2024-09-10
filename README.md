@@ -12,7 +12,17 @@ Ensure you have the following software installed:
 - [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 - [Nest](https://docs.nestjs.com/first-steps)
 
-## Backend Setup Guide
+## Setup
+
+### Clone the Repository
+
+Clone the repository:
+
+```bash
+git clone https://github.com/nabil-ahmad-925/book-management-system.git
+```
+
+### Backend Setup Guide
 
 Go to backend folder:
 
@@ -20,7 +30,7 @@ Go to backend folder:
 cd backend
 ```
 
-### Configure Environment Variables
+#### Configure Environment Variables
 
 Create a `.env` file in the root of your project with the following content:
 
@@ -32,7 +42,7 @@ PORT=
 
 Replace MONGODB_URI with your actual data.
 
-## Frontend Setup Guide
+### Frontend Setup Guide
 
 Go to frontend folder:
 
@@ -40,7 +50,7 @@ Go to frontend folder:
 cd frontend
 ```
 
-### Configure Environment Variables
+#### Configure Environment Variables
 
 Create a `.env.local` file in the root of your project with the following content:
 
