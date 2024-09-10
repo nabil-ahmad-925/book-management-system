@@ -1,0 +1,32 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - "feat/*"
+      - "staging"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Environment
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          if [[ "$BRANCH_NAME" == "staging" ]]; then
+            DEPLOY_URL="https://staging.example.com"
+          else
+            DEPLOY_URL="https://feature-$BRANCH_NAME.example.com"
+          fi
+          ./deploy.sh $DEPLOY_URL
