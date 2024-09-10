@@ -1,0 +1,22 @@
+stages:
+  - deploy
+
+variables:
+  STAGING_URL: "https://staging.example.com"
+  FEATURE_URL: "https://feature-$CI_COMMIT_BRANCH.example.com"
+
+deploy_staging:
+  stage: deploy
+  script:
+    - npm run build
+    - npm run deploy --url $STAGING_URL
+  only:
+    - main
+
+deploy_feature:
+  stage: deploy
+  script:
+    - npm run build
+    - npm run deploy --url $FEATURE_URL
+  only:
+    - /^feat\/.*/
