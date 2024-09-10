@@ -35,9 +35,9 @@ cd backend
 Create a `.env` file in the root of your project with the following content:
 
 ```bash
-MONGODB_URI=
+MONGODB_URI=mongodb://localhost/book-management-system
 
-PORT=
+PORT=3001
 ```
 
 Replace MONGODB_URI with your actual data.
@@ -55,7 +55,7 @@ cd frontend
 Create a `.env.local` file in the root of your project with the following content:
 
 ```bash
-NEXT_PUBLIC_API_BASE_URL=
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3001
 ```
 
 Replace NEXT_PUBLIC_API_BASE_URL with your actual data.
